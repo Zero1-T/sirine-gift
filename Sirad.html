@@ -1,0 +1,628 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>لاحلى زوجة فالعالم ❤️</title>
+  <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;900&family=Reem+Kufi:wght@700&display=swap" rel="stylesheet">
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      font-family: 'Cairo', sans-serif;
+      user-select: none;
+    }
+
+    body {
+      background: radial-gradient(circle, #ff0055 0%, #800020 40%, #2b000a 100%);
+      min-height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      overflow: hidden;
+      position: relative;
+    }
+
+    /* خلفية البريق والقلوب */
+    .sparkle {
+      position: fixed;
+      top: -10vh;
+      color: #ff3366;
+      font-size: 1.8rem;
+      pointer-events: none;
+      z-index: 2;
+      text-shadow: 0 0 10px #ff0055, 0 0 20px #ff6699;
+      animation: fall linear infinite;
+    }
+
+    @keyframes fall {
+      0% {
+        transform: translateY(0) rotate(0deg) scale(0.8);
+        opacity: 1;
+      }
+      50% {
+        opacity: 0.9;
+      }
+      100% {
+        transform: translateY(115vh) rotate(360deg) scale(1.2);
+        opacity: 0.1;
+      }
+    }
+
+    /* كلمات "بحبك" المنثورة */
+    .scattered-love {
+      position: fixed;
+      font-size: 1.8rem;
+      font-weight: 700;
+      color: #003366;
+      text-shadow: 0 0 10px rgba(0, 119, 182, 0.8), 0 0 18px rgba(255, 255, 255, 0.4);
+      z-index: 1;
+      pointer-events: none;
+      opacity: 0.8;
+      animation: floatRandom 5s ease-in-out infinite alternate;
+    }
+
+    @keyframes floatRandom {
+      0% { transform: translateY(0px) rotate(0deg); }
+      100% { transform: translateY(-12px) rotate(4deg); }
+    }
+
+    /* القلوب الضخمة الناعمة واللامعة المستمرة بدون اختفاء */
+    .glowing-side-heart {
+      position: fixed;
+      top: 50%;
+      transform: translateY(-50%);
+      font-size: 11rem;
+      cursor: pointer;
+      z-index: 15;
+      color: #ff0015;
+      text-shadow: 
+        0 0 30px #ff0033, 
+        0 0 60px #ff0055, 
+        0 0 90px #ff6688,
+        0 0 120px rgba(255, 255, 255, 0.9);
+      animation: pulseSmooth 1.6s ease-in-out infinite alternate;
+      transition: transform 0.2s ease, filter 0.2s ease;
+      filter: drop-shadow(0 0 25px rgba(255, 0, 30, 0.95));
+      line-height: 1;
+      opacity: 1 !important;
+      visibility: visible !important;
+    }
+
+    .glowing-side-heart.right-heart {
+      right: 11%;
+    }
+
+    .glowing-side-heart.left-heart {
+      left: 11%;
+    }
+
+    .glowing-side-heart:active {
+      transform: translateY(-50%) scale(0.88);
+    }
+
+    @keyframes pulseSmooth {
+      0% {
+        transform: translateY(-50%) scale(1);
+        filter: drop-shadow(0 0 20px rgba(255, 0, 40, 0.8));
+      }
+      100% {
+        transform: translateY(-50%) scale(1.12);
+        filter: drop-shadow(0 0 40px rgba(255, 0, 60, 1));
+      }
+    }
+
+    /* حاوي الكروت الرئيسي - بدون أي حواف أو مستطيلات غريبة أثناء التنقل */
+    .container {
+      width: 90%;
+      max-width: 620px;
+      background: rgba(40, 0, 15, 0.82);
+      backdrop-filter: blur(15px);
+      -webkit-backdrop-filter: blur(15px);
+      border: 3px solid #ff0055;
+      border-radius: 30px;
+      padding: 40px 25px;
+      box-shadow: 0 0 35px rgba(255, 0, 85, 0.7), inset 0 0 25px rgba(255, 0, 85, 0.4);
+      text-align: center;
+      position: relative;
+      z-index: 20;
+    }
+
+    /* تنقل فوري وناعم بين الصفحات بدون ظهور أي عناصر شفافة أو مستطيلات */
+    .page {
+      display: none;
+      opacity: 0;
+      transition: opacity 0.3s ease;
+    }
+
+    .page.active {
+      display: block;
+      opacity: 1;
+    }
+
+    .title {
+      font-family: 'Reem Kufi', sans-serif;
+      font-size: 2.6rem;
+      color: #ffffff;
+      text-shadow: 0 0 10px #ff0055, 0 0 20px #ff0055, 0 0 30px #ff3366;
+      margin-bottom: 20px;
+    }
+
+    /* تصميم صفحة الباسوورد */
+    .pass-input {
+      width: 80%;
+      max-width: 300px;
+      padding: 12px 20px;
+      font-size: 1.2rem;
+      text-align: center;
+      border: 2px solid #ff3366;
+      border-radius: 25px;
+      background: rgba(255, 255, 255, 0.9);
+      color: #800020;
+      font-weight: bold;
+      outline: none;
+      box-shadow: 0 0 15px rgba(255, 0, 85, 0.4);
+      margin-bottom: 15px;
+    }
+
+    .pass-error {
+      color: #ffb3c1;
+      font-weight: bold;
+      margin-top: 10px;
+      font-size: 1rem;
+      display: none;
+      text-shadow: 0 0 5px #ff0055;
+    }
+
+    .love-card {
+      background: rgba(128, 0, 32, 0.6);
+      border-radius: 20px;
+      padding: 25px;
+      border: 2px solid #ff3366;
+      box-shadow: inset 0 0 15px rgba(255, 51, 102, 0.5);
+      margin-bottom: 25px;
+    }
+
+    .love-text {
+      font-size: 1.3rem;
+      color: #ffffff;
+      line-height: 2;
+      font-weight: 700;
+      text-shadow: 0 2px 4px rgba(0,0,0,0.8);
+    }
+
+    .btn {
+      background: linear-gradient(45deg, #ff0055, #ff3366, #ff0055);
+      background-size: 200% 200%;
+      animation: gradientShift 3s ease infinite;
+      color: white;
+      border: 2px solid #ffb3c1;
+      padding: 14px 38px;
+      font-size: 1.25rem;
+      font-weight: bold;
+      border-radius: 50px;
+      cursor: pointer;
+      box-shadow: 0 0 20px rgba(255, 0, 85, 0.8);
+      transition: all 0.3s ease;
+    }
+
+    .btn:hover {
+      transform: scale(1.05);
+      box-shadow: 0 0 30px rgba(255, 51, 102, 1);
+    }
+
+    @keyframes gradientShift {
+      0% { background-position: 0% 50%; }
+      50% { background-position: 100% 50%; }
+      100% { background-position: 0% 50%; }
+    }
+
+    /* القلوب التفاعلية القابلة للفرقعة */
+    .pop-section-title {
+      color: #ffb3c1;
+      font-size: 1.1rem;
+      margin-bottom: 15px;
+      text-shadow: 0 0 5px #ff0055;
+    }
+
+    .interactive-hearts-grid {
+      display: flex;
+      justify-content: center;
+      gap: 15px;
+      margin-bottom: 25px;
+      flex-wrap: wrap;
+    }
+
+    .pop-heart-btn {
+      font-size: 2.2rem;
+      background: rgba(255, 0, 85, 0.2);
+      border: 2px solid #ff3366;
+      border-radius: 50%;
+      width: 65px;
+      height: 65px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      cursor: pointer;
+      box-shadow: 0 0 15px rgba(255, 0, 85, 0.5);
+      transition: transform 0.2s;
+    }
+
+    .pop-heart-btn:active {
+      transform: scale(0.8);
+    }
+
+    /* الهدايا في الصفحة الثانية */
+    .gifts-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+      gap: 15px;
+      margin: 25px 0;
+    }
+
+    .gift-box {
+      background: rgba(255, 51, 102, 0.2);
+      border: 2px dashed #ffb3c1;
+      border-radius: 20px;
+      padding: 20px 10px;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      box-shadow: 0 0 10px rgba(255, 0, 85, 0.3);
+    }
+
+    .gift-box:hover {
+      transform: translateY(-5deg);
+      border-color: #ffffff;
+      background: rgba(255, 0, 85, 0.5);
+      box-shadow: 0 0 25px rgba(255, 51, 102, 0.8);
+    }
+
+    .gift-icon {
+      font-size: 2.8rem;
+      display: block;
+      margin-bottom: 8px;
+    }
+
+    .gift-title {
+      font-size: 1rem;
+      color: #ffffff;
+      font-weight: bold;
+    }
+
+    /* Modal / نافذة الرسائل */
+    .modal-overlay {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100vw;
+      height: 100vh;
+      background: rgba(0, 0, 0, 0.7);
+      backdrop-filter: blur(8px);
+      display: none;
+      justify-content: center;
+      align-items: center;
+      z-index: 100;
+    }
+
+    .modal-content {
+      background: linear-gradient(135deg, #800020, #2b000a);
+      border: 3px solid #ff3366;
+      width: 85%;
+      max-width: 420px;
+      border-radius: 25px;
+      padding: 30px;
+      text-align: center;
+      box-shadow: 0 0 40px rgba(255, 0, 85, 0.9);
+      animation: popIn 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    }
+
+    @keyframes popIn {
+      from { transform: scale(0.6); opacity: 0; }
+      to { transform: scale(1); opacity: 1; }
+    }
+
+    .modal-text {
+      font-size: 1.25rem;
+      color: #ffffff;
+      line-height: 1.8;
+      margin: 20px 0;
+      font-weight: 700;
+      text-shadow: 0 0 8px rgba(255, 255, 255, 0.5);
+    }
+
+    .close-btn {
+      background: #ff0055;
+      color: white;
+      border: 1px solid #ffb3c1;
+      padding: 10px 25px;
+      border-radius: 20px;
+      cursor: pointer;
+      font-weight: bold;
+      box-shadow: 0 0 10px rgba(255, 0, 85, 0.6);
+    }
+
+    /* جسيمات الانفجار للقلوب */
+    .burst-heart {
+      position: fixed;
+      pointer-events: none;
+      color: #ffb3c1;
+      font-size: 1.6rem;
+      z-index: 999;
+      text-shadow: 0 0 10px #ff6699;
+      animation: explode 1s ease-out forwards;
+    }
+
+    @keyframes explode {
+      0% {
+        opacity: 1;
+        transform: translate(0, 0) scale(1);
+      }
+      100% {
+        opacity: 0;
+        transform: translate(var(--tx), var(--ty)) scale(1.8);
+      }
+    }
+
+    @media (max-width: 1200px) {
+      .glowing-side-heart {
+        font-size: 7.5rem;
+      }
+      .glowing-side-heart.right-heart { right: 3%; }
+      .glowing-side-heart.left-heart { left: 3%; }
+    }
+
+    @media (max-width: 768px) {
+      .glowing-side-heart {
+        font-size: 5rem;
+      }
+      .glowing-side-heart.right-heart { right: 1.5%; }
+      .glowing-side-heart.left-heart { left: 1.5%; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- القلوب الكبيرة الجانبية ثابتة بلون أحمر غامق ونابضة بسلاسة دون اختفاء -->
+  <div class="glowing-side-heart right-heart" onclick="massiveHeartBurst(event)">💗</div>
+  <div class="glowing-side-heart left-heart" onclick="massiveHeartBurst(event)">💗</div>
+
+  <!-- كلمات "بحبك" المنثورة -->
+  <div class="scattered-love" style="top: 4%; left: 6%;">بحبك</div>
+  <div class="scattered-love" style="top: 6%; right: 8%;">بحبك</div>
+  <div class="scattered-love" style="top: 18%; left: 18%;">بحبك</div>
+  <div class="scattered-love" style="top: 20%; right: 20%;">بحبك</div>
+  <div class="scattered-love" style="top: 36%; left: 4%;">بحبك</div>
+  <div class="scattered-love" style="top: 34%; right: 5%;">بحبك</div>
+  <div class="scattered-love" style="top: 52%; left: 2%;">بحبك</div>
+  <div class="scattered-love" style="top: 54%; right: 3%;">بحبك</div>
+  <div class="scattered-love" style="bottom: 22%; left: 8%;">بحبك</div>
+  <div class="scattered-love" style="bottom: 24%; right: 10%;">بحبك</div>
+  <div class="scattered-love" style="bottom: 8%; left: 16%;">بحبك</div>
+  <div class="scattered-love" style="bottom: 6%; right: 14%;">بحبك</div>
+  <div class="scattered-love" style="top: 3%; left: 44%;">بحبك</div>
+  <div class="scattered-love" style="bottom: 3%; right: 46%;">بحبك</div>
+
+  <!-- حاوي الصفحة الرئيسي -->
+  <div class="container">
+    
+    <!-- صفحة الباسوورد الأولية -->
+    <div id="pageAuth" class="page active">
+      <h1 class="title">اكتبي الباسوورد يا حلوتي✨</h1>
+      <p style="color: #ffb3c1; font-weight: bold; margin-bottom: 20px;">فديت زوجتي الحلوة الكيوتة مرة ذي وهي تفكر فالباسوورد وتكتبه كمان احلى من تفكر وتكتب ااححببكك اعششققككك يا عششققيي انتتييي💕</p>
+      <input type="text" id="passInput" class="pass-input" placeholder="اكتبي هنا بيب...">
+      <br>
+      <button class="btn" onclick="checkPassword()">دخول ❤️</button>
+      <p class="pass-error" id="passError">الباسوورد غلط يا روحي..جربي تاني</p>
+    </div>
+
+    <!-- الصفحة الأولى (الكلام الحلو) -->
+    <div id="page1" class="page">
+      <h1 class="title">لزوجتي ❤️</h1>
+      
+      <div class="love-card">
+        <p class="love-text">
+          اليوم يوم مميز لانك معاي فيه ياروحي انتي اللي ميزتي اليوم في حياتي..💖<br>
+          وجودك هو اللي يخلي كل شي مميز في حياتي الله لا يحرمني من وجودك ياحبيبتي<br>
+          سيرينتي انتي احلى ما حصلي وفرحان اننا نعيش ايام مميزة وجديدة مع بعض وانتي اللي مميزاها طبعا يا عيوني يارب تفضلي مميزة ايامي وحياتي💕
+        </p>
+      </div>
+
+      <p class="pop-section-title">اضغطي على القلوب يا عمري ✨</p>
+      <div class="interactive-hearts-grid">
+        <div class="pop-heart-btn" onclick="popHearts(event)">💖</div>
+        <div class="pop-heart-btn" onclick="popHearts(event)">💗</div>
+        <div class="pop-heart-btn" onclick="popHearts(event)">💓</div>
+        <div class="pop-heart-btn" onclick="popHearts(event)">💕</div>
+      </div>
+
+      <button class="btn" onclick="nextPage()">ادخلي هنا :) 🌸</button>
+    </div>
+
+    <!-- الصفحة الثانية (الهدايا) -->
+    <div id="page2" class="page">
+      <h1 class="title">هدايا لسيرينتتيي 🎁</h1>
+      <p style="color: #ffb3c1; font-weight: bold; margin-bottom: 10px;">اضغطي عليهم بيب:</p>
+      
+      <div class="gifts-grid">
+        <div class="gift-box" onclick="openGift(1, event)">
+          <span class="gift-icon">💓</span>
+          <span class="gift-title">احبك</span>
+        </div>
+        <div class="gift-box" onclick="openGift(2, event)">
+          <span class="gift-icon">🎀</span>
+          <span class="gift-title">اعشقك</span>
+        </div>
+        <div class="gift-box" onclick="openGift(3, event)">
+          <span class="gift-icon">💗</span>
+          <span class="gift-title">اهواكي</span>
+        </div>
+        <div class="gift-box" onclick="openGift(4, event)">
+          <span class="gift-icon">💕</span>
+          <span class="gift-title">مغرم فيكي</span>
+        </div>
+      </div>
+
+      <button class="btn" style="background: linear-gradient(45deg, #002855, #0077b6); border-color: #90e0ef;" onclick="prevPage()">رجوع 🌸</button>
+    </div>
+
+  </div>
+
+  <!-- Pop-up الرسائل -->
+  <div class="modal-overlay" id="modal">
+    <div class="modal-content">
+      <span style="font-size: 3.5rem;" id="modal-icon">🌸</span>
+      <p class="modal-text" id="modal-text"></p>
+      <button class="close-btn" onclick="closeModal()">إغلاق 💕</button>
+    </div>
+  </div>
+
+  <script>
+    // التحقق من الباسوورد مع انتقال فوري ومباشر بدون ظهور مستطيلات شفافة
+    function checkPassword() {
+      const input = document.getElementById('passInput').value.trim();
+      if (input === 'سيراد') {
+        const pageAuth = document.getElementById('pageAuth');
+        const page1 = document.getElementById('page1');
+        
+        pageAuth.classList.remove('active');
+        pageAuth.style.display = 'none';
+        
+        page1.style.display = 'block';
+        setTimeout(() => {
+          page1.classList.add('active');
+        }, 20);
+      } else {
+        document.getElementById('passError').style.display = 'block';
+      }
+    }
+
+    document.getElementById('passInput').addEventListener('keypress', function (e) {
+      if (e.key === 'Enter') {
+        checkPassword();
+      }
+    });
+
+    // إنشاء التساقط المستمر للقلوب والبريق
+    function createSparkle() {
+      const sparkle = document.createElement('div');
+      sparkle.classList.add('sparkle');
+      const items = ['💖', '❤️', '✨', '💗', '🌹', '💕'];
+      sparkle.innerText = items[Math.floor(Math.random() * items.length)];
+      
+      sparkle.style.left = Math.random() * 100 + 'vw';
+      sparkle.style.animationDuration = Math.random() * 3 + 2.5 + 's';
+      
+      document.body.appendChild(sparkle);
+
+      setTimeout(() => {
+        sparkle.remove();
+      }, 5500);
+    }
+    setInterval(createSparkle, 200);
+
+    // فرقعة قلوب مكثفة جداً للقلبين الجانبيين عند الضغط
+    function massiveHeartBurst(e) {
+      const rect = e.target.getBoundingClientRect();
+      const x = rect.left + rect.width / 2;
+      const y = rect.top + rect.height / 2;
+      const heartShapes = ['🌸', '💗', '💖', '💕', '✨', '💓', '❤️'];
+
+      for (let i = 0; i < 45; i++) {
+        const heart = document.createElement('div');
+        heart.classList.add('burst-heart');
+        heart.innerText = heartShapes[Math.floor(Math.random() * heartShapes.length)];
+        
+        const angle = Math.random() * Math.PI * 2;
+        const dist = Math.random() * 250 + 70;
+        const tx = Math.cos(angle) * dist + 'px';
+        const ty = Math.sin(angle) * dist + 'px';
+        
+        heart.style.left = x + 'px';
+        heart.style.top = y + 'px';
+        heart.style.setProperty('--tx', tx);
+        heart.style.setProperty('--ty', ty);
+
+        document.body.appendChild(heart);
+
+        setTimeout(() => heart.remove(), 1000);
+      }
+    }
+
+    // فرقعة عادية لقلوب الصفحة
+    function popHearts(e) {
+      const rect = e.target.getBoundingClientRect();
+      const x = rect.left + rect.width / 2;
+      const y = rect.top + rect.height / 2;
+
+      for (let i = 0; i < 15; i++) {
+        const heart = document.createElement('div');
+        heart.classList.add('burst-heart');
+        heart.innerText = Math.random() > 0.5 ? '🌸' : '💗';
+        
+        const angle = Math.random() * Math.PI * 2;
+        const dist = Math.random() * 100 + 40;
+        const tx = Math.cos(angle) * dist + 'px';
+        const ty = Math.sin(angle) * dist + 'px';
+        
+        heart.style.left = x + 'px';
+        heart.style.top = y + 'px';
+        heart.style.setProperty('--tx', tx);
+        heart.style.setProperty('--ty', ty);
+
+        document.body.appendChild(heart);
+
+        setTimeout(() => heart.remove(), 800);
+      }
+    }
+
+    // التنقل المباشر والسلس بين الصفحات
+    function nextPage() {
+      const page1 = document.getElementById('page1');
+      const page2 = document.getElementById('page2');
+      
+      page1.classList.remove('active');
+      page1.style.display = 'none';
+      
+      page2.style.display = 'block';
+      setTimeout(() => {
+        page2.classList.add('active');
+      }, 20);
+    }
+
+    function prevPage() {
+      const page1 = document.getElementById('page1');
+      const page2 = document.getElementById('page2');
+      
+      page2.classList.remove('active');
+      page2.style.display = 'none';
+      
+      page1.style.display = 'block';
+      setTimeout(() => {
+        page1.classList.add('active');
+      }, 20);
+    }
+
+    // رسائل الهدايا
+    const messages = {
+      1: { icon: "👑", text: "انتي امنيتي لذا اليوم يا حبيبتي اعشقك يا احلى زوجة فالعالم يا جنتي فالارض" },
+      2: { icon: "🌸", text: "اموت فيكي يا احلى اقداري يا نوري يا دنيتي يا حياتي كلها الله يخليكي لي يا عالمي" },
+      3: { icon: "💖", text: "مو بس ذا اليوم مميز انا ايامي كلها مميزة بوجودك بيب كل يوم هو يوم مميز لي لان معاي احلى واجمل زوجة احبك يا زوجتي" },
+      4: { icon: "✨", text: "عقبال باقي الايام وانتي معاي يا حبيبتي انا ميت فيكي يا مستقبلي" }
+    };
+
+    function openGift(id, event) {
+      popHearts(event);
+      setTimeout(() => {
+        document.getElementById('modal-icon').innerText = messages[id].icon;
+        document.getElementById('modal-text').innerText = messages[id].text;
+        document.getElementById('modal').style.display = 'flex';
+      }, 200);
+    }
+
+    function closeModal() {
+      document.getElementById('modal').style.display = 'none';
+    }
+  </script>
+</body>
+</html>
